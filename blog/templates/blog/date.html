@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+{% if age < 18 %}
+  <p>Tu n'as pas l'âge requis, désolé !</p>
+{% else %}
+
+  <img src="{% static 'blog/crepe-bretonne.jpeg' %}" alt="Photo crêpe" />
+
+  <h1>Bienvenue sur mon blog,
+  {% if sexe == "Femme" %}
+    Madame
+  {% else %}
+    Monsieur
+  {% endif %}
+  {{ pseudo }} !</h1>
+
+  <p>Nous sommes le {{ date }}</p>
+{% endif %}
+{% endblock %}
